@@ -1,6 +1,6 @@
-import React from 'react'
-import { Form, Input, Button } from 'antd';
-import 'antd/dist/antd.css';
+import React from "react";
+import { Form, Input, Button } from "antd";
+import "antd/dist/antd.css";
 
 const layout = {
   labelCol: { span: 8 },
@@ -10,14 +10,14 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
-const LoginForm = ({Login,Error}) => {
+const LoginForm = ({ Login, Error }) => {
   const onFinish = (values) => {
-    console.log('Success:', values);
-    Login(values)
+    console.log("Success:", values);
+    Login(values);
   };
 
   const onFinishFailed = (errorInfo) => {
-    console.log('Failed:', errorInfo);
+    console.log("Failed:", errorInfo);
   };
 
   return (
@@ -31,7 +31,7 @@ const LoginForm = ({Login,Error}) => {
       <Form.Item
         label="Username"
         name="username"
-        rules={[{ required: true, message: 'User name' }]}
+        rules={[{ required: true, message: "User name" }]}
       >
         <Input />
       </Form.Item>
@@ -39,16 +39,16 @@ const LoginForm = ({Login,Error}) => {
       <Form.Item
         label="Password"
         name="password"
-        rules={[{ required: true, message: 'Password' }]}
+        rules={[{ required: true, message: "Password" }]}
       >
         <Input.Password />
       </Form.Item>
 
-      <Form.Item {...tailLayout} >
-        {(Error)?<div style={{color: "red"}}>{Error}</div>:<p></p>}
+      <Form.Item {...tailLayout}>
+        {Error ? <div style={{ color: "red" }}>{Error}</div> : <p></p>}
       </Form.Item>
 
-        <Form.Item {...tailLayout}>
+      <Form.Item {...tailLayout}>
         <Button type="primary" htmlType="submit">
           Submit
         </Button>
@@ -57,5 +57,4 @@ const LoginForm = ({Login,Error}) => {
   );
 };
 
-export default LoginForm
-
+export default LoginForm;
